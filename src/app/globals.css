@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #24252F;
+  --foreground: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +16,19 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(#24252F, #242530);
 }
+
+button {
+  background-color: #313341;
+  padding: 8px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  
+}
+
+button:hover{
+  background-color: #2D76F9;
+}
+
+/*linear-gradient( #24252F,#242530)*/
