@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import ProjectsList from './ProjectsList'
 import CategoriesList from './CategoriesList';
+import Anketa from './Anketa/Anketa';
 
 
 export default function MainSection() {
@@ -15,8 +16,10 @@ export default function MainSection() {
     return (
         <div className='mx-64 '>
             <h1 className='mt-24 text-4xl'>Кейсы</h1>
-            <CategoriesList onClick={handleCategoryChange}/>
+            <CategoriesList onClick={handleCategoryChange} />
             <ProjectsList selectedCategory={selectedCategory} />
+            <h1 className='mt-24 text-4xl'>Расскажите <br /> о вашем проекте:</h1>
+            <Anketa />
         </div>
     );
 };

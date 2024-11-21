@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+
+@include textfield.core-styles;
 
 :root {
   --background: #24252F;
@@ -24,11 +30,12 @@ button {
   padding: 8px;
   padding-right: 2rem;
   padding-left: 2rem;
-  
+
 }
 
-button:hover{
+button:hover {
   background-color: #2D76F9;
 }
+
 
 /*linear-gradient( #24252F,#242530)*/
