@@ -14,7 +14,7 @@ export default function NameField({ value, onChange }) {
     };
 
     return (
-        <FormControl error={!!nameError} sx={{ width: '50%' }}>
+        <FormControl error={!!nameError} sx={{ width: {xs: '100%', sm: '50%'}}}>
             <TextField
                 required
                 id='outlined-required'

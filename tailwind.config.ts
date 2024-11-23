@@ -8,13 +8,41 @@ export default {
   ],
   theme: {
     screens: {
-      '3xl': '1920px',
+      'sm': '600px',
+      'lg': '1028px',
+      'xl': '1920px',
     },
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+    },
+    fontSize: {
+      'xs': ['12px', {
+        lineHeight: '14.22px',
+        fontWeight: '300',
+      }],
+      'sm': ['13px', {
+        lineHeight: '18px',
+        fontWeight: '400',
+      }],
+      'l': ['18px', {
+        lineHeight: '21.6px',
+        fontWeight: '400',
+      }],
+      'xl': ['24px', {
+        lineHeight: '28.8px',
+        fontWeight: '400',
+      }],
+      '2xl': ['24px', {
+        lineHeight: '28.8px',
+        fontWeight: '600',
+      }],
+      '3xl': ['48px', {
+        lineHeight: '57.6px',
+        fontWeight: '600',
+      }]
     },
   },
   plugins: [],

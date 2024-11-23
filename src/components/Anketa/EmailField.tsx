@@ -15,7 +15,8 @@ export default function EmailField({ value, onChange }) {
         }
     };
 
-    return (<FormControl error={!!emailError} sx={{ width: '50%' }}>
+    return (
+    <FormControl error={!!emailError} sx={{width: {xs: '100%', sm: '50%'} }}>
         <TextField
             required
             id='outlined-required'
@@ -43,4 +44,4 @@ export default function EmailField({ value, onChange }) {
     </FormControl>
 
     )
-}
+};

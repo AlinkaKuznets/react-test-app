@@ -21,7 +21,7 @@ export default function PhoneField({value, onChange}) {
     };
 
     return (
-        <FormControl error={!!phonError} sx={{ width: '50%' }}>
+        <FormControl error={!!phonError} sx={{ width: {xs: '100%', sm: '50%'} }}>
             <TextField
                 required
                 id='outlined-required'

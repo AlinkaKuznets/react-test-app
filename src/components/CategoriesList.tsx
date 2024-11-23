@@ -31,9 +31,9 @@ export default function CategoriesList(props: Props) {
     if (error) return <div>Ошибка: {error.message}</div>;
 
     return (
-        <div className='button-section flex flex-row my-10  place-content-between'>
+        <div className='category-section xl:text-xl text-sm'>
             {categories.map(item => (
-                <button key={item.id} onClick={() => props.onClick(item.id)} className='button shadow-xl rounded-md'>{item.name}</button>
+                <button key={item.id} onClick={() => props.onClick(item.id)} className='button-type shadow-xl'>{item.name}</button>
             ))}
         </div>
     )

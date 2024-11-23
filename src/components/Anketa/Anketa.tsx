@@ -1,5 +1,5 @@
 "use client"
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useState, useEffect } from 'react'
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import NameField from './NameField';
@@ -9,6 +9,7 @@ import MessageField from './MessageField';
 import { sendFeedback } from '../../app/data/sendFeedback'
 
 
+
 export default function Anketa() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -16,6 +17,25 @@ export default function Anketa() {
     const [message, setMessage] = useState('');
     const [consent, setConsent] = useState(false);
     const [error, setError] = useState('');
+    const [labelText, setLabelText] = useState('Согласие на обработку персональных данных');
+
+    const updateLabelText = () => {
+        if (window.innerWidth < 600) {
+            setLabelText('Нажимая “Отправить”, Вы даете согласие на обработку персональных данных');
+        } else {
+            setLabelText('Согласие на обработку персональных данных');
+        }
+    };
+
+    useEffect(() => {
+        updateLabelText();
+        window.addEventListener('resize', updateLabelText);
+
+        return () => {
+            window.removeEventListener('resize', updateLabelText);
+        };
+    }, []);
+
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
@@ -53,25 +73,28 @@ export default function Anketa() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className='flex gap-10 mt-10'>
+            <div className='flex gap-10 mt-10 flex-col sm:flex-row'>
                 <NameField value={name} onChange={setName} />
                 <EmailField value={email} onChange={setEmail} />
                 <PhoneField value={phone} onChange={setPhone} />
             </div>
             <MessageField value={message} onChange={setMessage} />
-            <FormControlLabel
-                control={
-                    <Checkbox
-                        sx={{ color: 'white', '&.Mui-checked': { color: 'white' } }}
-                        checked={consent}
-                        onChange={(e) => setConsent(e.target.checked)}
-                    />
-                }
-                label="Согласие на обработку персональных данных"
-            />
+            <div className='checkbox-data'>
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            sx={{ color: 'white', '&.Mui-checked': { color: 'white' } }}
+                            checked={consent}
+                            onChange={(e) => setConsent(e.target.checked)}
+                            className='checkbox'
+                        />
+                    }
+                    label={<span className='personal-data lg:text-l text-sm'>{labelText}</span>}
+                />
+            </div>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <div className='flex place-content-center my-10'>
-                <button type='submit' className='rounded-3xl bg-[#2D76F9] px-10 py-3'>Обсудить проект</button>
+                <button type='submit' className='submit-button rounded-3xl bg-[#2D76F9] px-10 py-3'>Обсудить проект</button>
             </div>
         </form>
     );
