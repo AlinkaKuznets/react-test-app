@@ -77,7 +77,7 @@ h1 {
   background-color: var(--background);
 }
 
-.mobile-menu > nav {
+.mobile-menu>nav {
   margin-top: 5rem;
   margin-bottom: 5rem;
   margin-left: 1.25rem;
@@ -209,8 +209,25 @@ h1 {
   font-family: firaSans;
 }
 
+form>div {
+  display: flex;
+  place-content: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .submit-button {
   font-family: firaSans;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background-color: var(--accent);
+  transition: all 0.3s;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
 }
 
 /* ================ Anketa ===============*/
@@ -234,24 +251,25 @@ footer>div {
   gap: 1.25rem;
 }
 
-.footer-logo{
+.footer-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1 1 0%;
 }
 
-.footer-logo img{
+.footer-logo img {
   object-fit: contain;
   margin-bottom: 1rem;
 }
 
-.footer-col{
+.footer-col {
   display: flex;
   flex-direction: row;
   flex: 1 1 0%;
   gap: 1.25rem;
 }
+
 /* ================ Footer ===============*/
 
 
