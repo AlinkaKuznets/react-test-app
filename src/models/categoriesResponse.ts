@@ -1,5 +1,5 @@
-import { Category } from "./categories";
+import { Category } from './categories';
 
 export interface CategoriesResponse {
-    items: Category[]
+   items: Category[];
 }

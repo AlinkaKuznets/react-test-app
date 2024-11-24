@@ -1,5 +1,5 @@
-import { Project } from "./project";
+import { Project } from './project';
 
 export interface ProjectsResponse {
-    items: Project[]
+   items: Project[];
 }
