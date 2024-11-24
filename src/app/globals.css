@@ -63,10 +63,6 @@ h1 {
 }
 
 .mobile-menu {
-  background-color: var(--mobile-menu);
-}
-
-.mobile-menu {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -74,7 +70,7 @@ h1 {
   font-family: openSans;
   z-index: 20;
   justify-content: center;
-  background-color: var(--background);
+  background-color: var(--mobile-menu);
 }
 
 .mobile-menu>nav {
@@ -133,6 +129,10 @@ h1 {
   background-color: var(--accent);
 }
 
+.button-type.selected:hover {
+  background-color: #2158bd;
+}
+
 
 /* ================ Main Section ===============*/
 /* ================ Project List ===============*/
@@ -178,7 +178,7 @@ h1 {
   gap: 1.25rem;
 }
 
-.img-projects {
+.card-projects {
   position: relative;
   width: auto;
   margin-bottom: 2rem;
@@ -283,7 +283,7 @@ footer>div {
 }
 
 @media not all and (min-width: 1536px) {
-  .projects-img {
+  .projects-img{
     height: 320px;
     width: 327px;
   }

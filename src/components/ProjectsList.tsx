@@ -41,7 +41,7 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ selectedCategory }) => {
          className={`project-list lg:place-content-between ${selectedCategory === 0 ? '' : 'lg:justify-center'}`}
       >
          {filteredProjects.map((item) => (
-            <div key={item.id} className="img-projects container group">
+            <div key={item.id} className="card-projects container group">
                <div className="relative transition duration-300 transform group-hover:scale-105">
                   <img src={item.image} alt="" className="projects-img" />
                   <div
