@@ -3,9 +3,9 @@ import React from 'react'
 export default function MobileMenu({ isOpen = false }) {
     return (
         <React.Fragment>
-            <div className={`mobile-menu absolute top-0 right-0 w-full bg-black justify-center z-20 min-h-[150vh] ${isOpen ? 'flex' : 'hidden'}`}>
-                <nav className='my-20 mx-5 space-y-5 text-lg w-full'>
-                    <ul className='text-l mt-4 space-y-8'>
+            <div className={`mobile-menu min-h-[150vh] ${isOpen ? 'flex' : 'hidden'}`}>
+                <nav className='space-y-5 text-lg'>
+                    <ul className='text-l space-y-8'>
                         <li><a href='#'>Агенство</a></li>
                         <li><a href='#'>Услуги</a></li>
                         <li><a href='#'>Кейсы</a></li>

@@ -39,9 +39,9 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ selectedCategory }) => {
         : projects.filter(e => e.categories.find(c => c.id == selectedCategory))
 
     return (
-        <div className={`flex flex-wrap justify-center gap-5 lg:place-content-between ${selectedCategory===0?'':'lg:justify-center'}`}>
+        <div className={`project-list lg:place-content-between ${selectedCategory === 0 ? '' : 'lg:justify-center'}`}>
             {filteredProjects.map(item => (
-                <div key={item.id} className='relative container w-auto group mb-8'>
+                <div key={item.id} className='img-projects container group'>
                     <div className='relative transition duration-300 transform group-hover:scale-105'>
                         <img
                             src={item.image}
@@ -49,16 +49,16 @@ const ProjectsList: React.FC<ProjectsListProps> = ({ selectedCategory }) => {
                             className='projects-img'
                         />
                         <div className='dark-theme
-                        bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex 
-                        items-end lg:opacity-0  sm:opacity-100 sm:flex'>
-                            <p className='description-project text-white p-6'>Онлайн гипермаркет. Для компании были разработаны сайт и мобильное приложение и т.д.</p>
+                        bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100
+                        lg:opacity-0 '>
+                            <p className='description-project'>Онлайн гипермаркет. Для компании были разработаны сайт и мобильное приложение и т.д.</p>
                         </div>
                     </div>
-                    <img src={ArrowMobile.src} alt=' ' className='arrow-mobile absolute bottom-32 left-5 w-5 h-4' />
-                    <p className='mini-card lg:text-2xl'>
+                    <img src={ArrowMobile.src} alt=' ' className='arrow-mobile' />
+                    <p className='mini-card text-l lg:text-2xl'>
                         {item.title}
                     </p>
-                    <img src={Arrow.src} alt=' ' className='arrow-desktop absolute top-4 right-4 w-5 h-4' />
+                    <img src={Arrow.src} alt=' ' className='arrow-desktop' />
                 </div>
             ))}
         </div>

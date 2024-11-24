@@ -54,7 +54,7 @@ export default function Anketa() {
         try {
             const response = await sendFeedback(feedback);
             if (response.ok) {
-                console.log('Форма успешно отправлена');
+                alert('Форма успешно отправлена');
                 setName('');
                 setEmail('');
                 setPhone('');

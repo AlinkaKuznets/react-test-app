@@ -13,7 +13,7 @@ export default function PhoneField({value, onChange}) {
         } else if (value.length > 12) {
             setPhonError("Phone must be less than 12 characters long");
         } else 
-        if (!/^\+[0-9]+[0-9]+$/.test(value)) {
+        if (!/^[0-9]+$/.test(value)) {
             setPhonError("Phone must contain only numbers");
         } else {
             setPhonError("");

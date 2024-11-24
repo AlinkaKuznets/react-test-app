@@ -7,11 +7,10 @@ interface Props {
 }
 
 export default function CategoriesList(props: Props) {
-
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<Error | null>(null);
-
+    const [selectedId, setSelectedId] = useState<number | null>(null);
 
     useEffect(() => {
         getProjectCategories()
@@ -25,7 +24,15 @@ export default function CategoriesList(props: Props) {
             });
     }, []);
 
-
+    const handleClick = (id: number) => {
+        if (selectedId === id) {
+            setSelectedId(null);
+            props.onClick(0);
+        } else {
+            setSelectedId(id);
+            props.onClick(id);
+        }
+    };
 
     if (loading) return <div>Загрузка...</div>;
     if (error) return <div>Ошибка: {error.message}</div>;
@@ -33,8 +40,15 @@ export default function CategoriesList(props: Props) {
     return (
         <div className='category-section xl:text-xl text-sm'>
             {categories.map(item => (
-                <button key={item.id} onClick={() => props.onClick(item.id)} className='button-type shadow-xl'>{item.name}</button>
+                <button
+                    key={item.id}
+                    onClick={() => handleClick(item.id)}
+                    className={`button-type shadow-xl ${selectedId === item.id ? 'selected' : ''}`}
+                >
+                    {item.name}
+                </button>
             ))}
         </div>
-    )
+    );
 }
+
